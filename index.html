@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <title>Score Keeper</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="pebolim.jpg" alt="Photo of a Foosball table">
+                        </figure>
+                        </div>
+                        <div class="card-header">
+                            <p class="card-header-title is-size-2 is-justify-content-center">
+                            Foosball Score Keeper
+                            </p>
+                        </div>
+                        <div class="card-content">
+                        <div class="content is-flex is-flex-direction-column is-align-items-center">
+                                <h2 class="is-size-1 has-text-weight-bold is-family-monospace mt-3"> 
+                                    <span class="scorePlayer1">0</span> x <span class="scorePlayer2">0</span>
+                                </h2>
+                                <p class="subtitle">Use the buttons to keep score</p>
+                                <div class="mb-5">
+                                    <label for="max" class="label is-medium is-inline">Max score:</label>
+                                    <div class="select is-rounded">
+                                        <select name="max" class="max" id="max">
+                                            <option value="3">3</option>
+                                            <option value="5">5</option>
+                                            <option value="7">7</option>
+                                            <option value="9">9</option>
+                                            <option value="15">15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <section>
+                                    <button class="p1Button button is-primary mr-2">+1 Player One</button>
+                                    <button class="p2Button button is-info mr-2">+1 Player Two</button>
+                                    <button class="reset button is-danger mr-2">Reset</button>
+                                </section>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
