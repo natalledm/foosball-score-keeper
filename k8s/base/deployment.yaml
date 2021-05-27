@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-foosbal
+spec:
+  template:
+    spec:
+      containers:
+      - name: nginx
+        
+        image: some-image
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        
+        resources:
+          requests:
+            cpu: 1m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 256Mi
+        
+        volumeMounts:
+        - mountPath: /var/cache/nginx
+          name: nginx-cache
+        - mountPath: /var/run
+          name: nginx-run
+      
+      volumes:
+      - emptyDir: {}
+        name: nginx-cache
+      - emptyDir: {}
+        name: nginx-run

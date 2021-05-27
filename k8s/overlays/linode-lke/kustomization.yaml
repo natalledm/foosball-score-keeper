@@ -1,0 +1,30 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: default
+
+commonLabels:
+  app: nginx-foosbal
+
+resources:
+  - ../../base/
+
+images:
+  - name: some-image
+    newName: 0x6170/nginx
+    newTag: foosbal-score-keeper
+
+replicas:
+  - name: nginx-foosbal
+    count: 1
+
+patchesStrategicMerge:
+  - |-
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: nginx-foosbal
+      annotations:
+        service.beta.kubernetes.io/linode-loadbalancer-throttle: "2"
+    spec:
+      type: LoadBalancer
