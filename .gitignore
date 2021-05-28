@@ -1,0 +1,4 @@
+**/app.yaml
+**/tmp/**
+!/tmp/no_content_here_used_by_local_docker_only
+.DS_Store
